@@ -153,16 +153,38 @@ show_histogram_svg(const vector<size_t>& bins)
         }
     }
 
+    if (max_count > MAX_COUNT)
+    {
+
+        const double scaling_factor = (double)MAX_COUNT / max_count;
+
         for (size_t bin : bins)
         {
-            auto height = bin;
+            auto height = (size_t)(bin * scaling_factor);
             const double bin_width = BLOCK_WIDTH * height;
             svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
             svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT, "blue", "#ff2233");
             top += BIN_HEIGHT;
 
         }
+
         svg_end();
+    }
+    else
+    {
+        for (size_t bin : bins)
+        {
+
+            const double bin_width = BLOCK_WIDTH * bin;
+            svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
+            svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT, "blue", "#aaffaa");
+            top += BIN_HEIGHT;
+
+        }
+        svg_end();
+
+    }
+
 }
 
 int
