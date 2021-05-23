@@ -9,8 +9,8 @@ using namespace std;
 int
 main()
 {
-    const char* name = "Ya russky";
-    int year = 21;
+    const char* name = "Commander Shepard";
+    int year = 2154;
     printf("%s was born in %d.\n", name, year);
     printf("n = %08x\n", 0x1234567);
 
