@@ -12,7 +12,7 @@ struct Input {
 
 void
 show_histogram_text(const vector<size_t>& bins);
-vector<size_t> make_histogram(const vector<double>& numbers, size_t bin_count);
+vector<size_t> make_histogram(Input data);
 
 
 

@@ -65,15 +65,15 @@ show_histogram_text(const vector<size_t>& bins)
 }
 
 
-vector<size_t> make_histogram(const vector<double>& numbers, size_t bin_count)
+vector<size_t> make_histogram(Input data)
 {
-    vector<size_t> result(bin_count);
+    vector<size_t> result(data.bin_count);
     double min, max;
-    find_minmax(numbers, min, max);
-    for (double number : numbers)
+    find_minmax(data.numbers, min, max);
+    for (double number : data.numbers)
     {
-        size_t bin = (size_t)((number - min) / (max - min) * bin_count);
-        if (bin == bin_count)
+        size_t bin = (size_t)((number - min) / (max - min) * data.bin_count);
+        if (bin == data.bin_count)
         {
             bin--;
         }

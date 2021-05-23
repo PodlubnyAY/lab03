@@ -41,9 +41,8 @@ read_input(istream& in)
 int
 main()
 {
-    Input data = read_input(cin);
-
-    const auto bins = make_histogram(data.numbers, data.bin_count);
+    const auto input = read_input(cin);
+    const auto bins = make_histogram(input);
     show_histogram_svg(bins);
     return 0;
 }
