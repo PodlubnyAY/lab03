@@ -16,5 +16,4 @@ vector<size_t> make_histogram(Input data);
 
 
 
-
 #endif // HISTOGRAM_H_INCLUDED
