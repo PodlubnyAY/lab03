@@ -1,5 +1,7 @@
 # depslib dependency file v1.0
-1621795959 source:c:\users\user\desktop\aaaa\lb3\main.cpp
+114 <<<<<<< HEAD
+
+1621830885 source:c:\users\user\desktop\aaaa\lb3\main.cpp
 	<iostream>
 	<vector>
 	"svg.h"
@@ -7,22 +9,46 @@
 	<curl/curl.h>
 	<string>
 	<sstream>
+	<Windows.h>
+	<windows.h>
+	<sstream>
+	<string>
 
-1621787125 source:c:\users\user\desktop\aaaa\lb3\histogram.cpp
+1621820422 04-2
+	<iostream>
+	<vector>
+	"svg.h"
+	<vector>
+	<iostream>
+	"histogram.h"
+	<iostream>
+	<vector>
+
+1621809150 D
+	"histogram.h"
+	<curl/curl.h>
+	<string>
+	<sstream>
+
+1621830885 source:c:\users\user\desktop\aaaa\lb3\histogram.cpp
 	<vector>
 	<iostream>
 	"histogram.h"
 
-1621787125 c:\users\user\desktop\aaaa\lb3\histogram.h
+1621830885 c:\users\user\desktop\aaaa\lb3\histogram.h
 	<vector>
 
-1621780407 c:\users\user\desktop\aaaa\lb3\svg.h
+1621830497 c:\users\user\desktop\aaaa\lb3\svg.h
 	<vector>
 	<string>
 
-1621784916 source:c:\users\user\desktop\aaaa\lb3\svg.cpp
+1621830497 source:c:\users\user\desktop\aaaa\lb3\svg.cpp
 	<iostream>
 	<vector>
+	"svg.h"
+	<windows.h>
+	<sstream>
+	<string>
 
 1618204474 c:\users\user\desktop\aaaa\lb3\curl\include\curl\curl.h
 	"curlver.h"

@@ -6,7 +6,9 @@
 #include <string>
 #include <sstream>
 #include <Windows.h>
-
+#include <windows.h>
+#include <sstream>
+#include <string>
 
 using namespace std;
 
@@ -46,6 +48,7 @@ connect_time(const string& address)
         curl_easy_cleanup(curl);
     }
 }
+
 
 Input
 read_input(istream& in, bool prompt)
