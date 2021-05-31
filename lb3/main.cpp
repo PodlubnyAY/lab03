@@ -26,29 +26,6 @@ input_numbers(istream& in, size_t count)
     return result;
 }
 
-void
-connect_time(const string& address)
-{
-
-    curl_global_init(CURL_GLOBAL_ALL);
-    CURL *curl = curl_easy_init();
-    if(curl)
-    {
-        double connect;
-        curl_easy_setopt(curl, CURLOPT_URL, address.c_str());
-        auto res = curl_easy_perform(curl);
-        if(CURLE_OK == res)
-        {
-            res = curl_easy_getinfo(curl, CURLINFO_CONNECT_TIME, &connect);
-            if(CURLE_OK == res)
-            {
-                printf("Time: %.1f", connect);
-            }
-        }
-        curl_easy_cleanup(curl);
-    }
-}
-
 
 Input
 read_input(istream& in, bool prompt)
@@ -99,10 +76,19 @@ download(const string& address)
     if(curl)
     {
         CURLcode res;
+        double connect;
         curl_easy_setopt(curl, CURLOPT_URL, address.c_str());
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &buffer);
         res = curl_easy_perform(curl);
+        if(CURLE_OK == res)
+        {
+            res = curl_easy_getinfo(curl, CURLINFO_CONNECT_TIME, &connect);
+            if(CURLE_OK == res)
+            {
+                cerr <<"Connect: " << connect;
+            }
+        }
         curl_easy_cleanup(curl);
 
         if(res)
@@ -121,10 +107,10 @@ main(int argc, char* argv[])
     Input input;
     if (argc > 1)
     {
-        connect_time(argv[1]);
         input = download(argv[1]);
     }
     else
+
     {
         input = read_input(cin, true);
     }
